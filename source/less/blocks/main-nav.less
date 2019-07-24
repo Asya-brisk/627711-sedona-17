@@ -1,0 +1,35 @@
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-nav__list {
+  .list-reset();
+}
+
+.site-list__item {
+  width: 320px;
+  padding: 7px 0 8px;
+
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: bold;
+  color: @white;
+  .txt-align();
+
+  box-shadow:
+    0 0 1px 0 fade(#010101, 20%),
+    inset 0 1px 0 0 fade(@white, 20%);
+  background-color: @light-blue;
+  cursor: pointer;
+
+  a {
+    color: @white;
+  }
+}
+
+.page-header__logo {
+  margin-top: 0;
+  position: relative;
+}
