@@ -24,13 +24,12 @@
   background-color: @bg-grey;
   .txt-align();
 
-  &:nth-child(1),
-  &:nth-child(3) {
+  &--illustrated {
     background-color: @light-blue;
     color: @white;
   }
 
-  &:nth-child(2) {
+  &--addition {
     background-color: @white;
   }
 }
@@ -41,11 +40,8 @@
   line-height: 26px;
 }
 
-.more-advantages__title {
-  color: @black;
-}
-
-.advantages__item:nth-last-child(-n+3) .advantages__title {
+.more-advantages__title,
+.advantages__item--bg-grey .advantages__title {
   color: @black;
 }
 

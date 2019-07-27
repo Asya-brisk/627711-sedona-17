@@ -1,35 +1,127 @@
 .main-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  width: 320px;
+  min-height: 56px;
+  margin: 0 auto;
+
+  background-color: @white;
 }
 
 .main-nav__list {
   .list-reset();
 }
 
-.site-list__item {
-  width: 320px;
-  padding: 7px 0 8px;
+.main-nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 12;
 
-  font-size: 18px;
-  line-height: 40px;
-  font-weight: bold;
-  color: @white;
-  .txt-align();
+  display: block;
+  width: 63px;
+  height: 56px;
 
-  box-shadow:
-    0 0 1px 0 fade(#010101, 20%),
-    inset 0 1px 0 0 fade(@white, 20%);
+  background-color: transparent;
+  border: none;
+  outline-color: @outline-cl;
+  cursor: pointer;
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+
+  position: absolute;
+  top: 17px;
+  left: 20px;
+
+  width: 23px;
+  height: 4px;
+
   background-color: @light-blue;
+  box-shadow: 0 8px 0 0 @light-blue, 0 16px 0 0 @light-blue;
+}
+
+.main-nav--opened .main-nav__toggle::before {
+  content: "";
+
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 15;
+
+  width: 22px;
+  height: 22px;
   cursor: pointer;
 
-  a {
-    color: @white;
+  background-image: url("../img/icon-cross.svg");
+}
+
+.main-nav__logo {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  top: 0;
+  width: 102px;
+  height: 84px;
+
+  transform: translateX(-50%);
+}
+
+@media (max-width: @mobile-width-only) {
+  .main-nav--closed .site-list__item {
+    display: none;
+  }
+
+  .main-nav--opened .main-nav__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+
+    background-color: @light-blue;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__wrapper {
+    position: static;
+    min-height: 0;
+  }
+
+  .main-nav--nojs .site-list__item {
+    display: block;
+  }
+
+  .main-nav--nojs .main-nav__logo {
+    display: none;
   }
 }
 
-.page-header__logo {
-  margin-top: 0;
-  position: relative;
+@media (min-width: @tablet-width) {
+  .main-nav {
+    width: auto;
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  .main-nav__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-nav__wrapper {
+    width: 1200px;
+  }
 }
