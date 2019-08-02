@@ -1,11 +1,14 @@
 .site-list__item {
-  padding: 7px 20px 8px;
+  width: 100%;
+  padding-top: 7px;
+  padding-bottom: 8px;
 
   font-size: 18px;
   line-height: 40px;
   font-weight: bold;
   color: @white;
   .txt-align();
+  box-sizing: border-box;
 
   box-shadow:
     0 0 1px 0 fade(#010101, 20%),
@@ -19,12 +22,10 @@
 }
 
 @media (min-width: @tablet-width) {
-  .site-list {
-    width: 768px;
-  }
-
   .site-list__item {
-    padding: 16px 25px 16px 24px;
+    width: 20%;
+    padding-top: 14px;
+    padding-bottom: 16px;
 
     font-size: 14px;
     line-height: 26px;
@@ -40,31 +41,15 @@
       color: @black;
     }
 
-    &--short {
-      padding: 16px 52px 16px;
-    }
-
     &--aside {
-      margin-left: auto;
-      padding: 16px 18px 16px 26px;
+      margin-left: 153px;
+      padding-left: 6px;
     }
   }
 }
 
 @media (min-width: @desktop-width) {
-  .site-list {
-    width: 1200px;
-  }
-
-  .site-list__item {
-    padding: 16px 72px 18px 70px;
-
-    &--short {
-      padding: 16px 95px 16px;
-    }
-
-    &--aside {
-      padding: 16px 63px 16px;
-    }
+  .site-list__item--aside {
+    margin-left: 240px;
   }
 }
