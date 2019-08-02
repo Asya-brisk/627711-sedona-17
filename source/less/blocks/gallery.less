@@ -1,28 +1,47 @@
 .gallery {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .gallery__list {
+  display: flex;
+  flex-direction: column;
   .list-reset ();
+  border-top: 1px solid @photo-border;
 }
 
-.gallery__content {
-  margin: 23px 20px 17px;
+.gallery__item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid @photo-border;
 }
 
-.gallery__photo-name {
-  color: @black;
-  font-weight: bold;
-  padding-left: 20px;
+@media (min-width: @tablet-width) {
+  .gallery {
+    width: 648px;
+  }
+
+  .gallery__header {
+    width: 442px;
+    margin: 0 auto;
+  }
+
+  .gallery__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    border-top: none;
+  }
+
+  .gallery__item {
+    border-bottom: none;
+  }
 }
 
-.gallery__author {
-  text-transform: none;
-  padding-left: 20px;
-}
-
-.gallery__likes-number {
-  color: @black;
-  font-weight: bold;
+@media (min-width: @desktop-width) {
+  .gallery {
+    width: 1200px;
+  }
 }
