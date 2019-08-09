@@ -12,7 +12,7 @@
   .txt-align();
   color: @black;
 
-  padding: 39px 30px 26px;
+  padding: 38px 30px 26px;
   margin: 0;
 }
 
@@ -43,7 +43,7 @@
   .heading__title {
     font-size: 30px;
     line-height: 26px;
-    padding: 75px 95px 30px;
+    padding: 74px 95px 30px;
   }
 
   .heading__intro {
@@ -53,5 +53,15 @@
     &--photo {
       padding: 0 0 69px;
     }
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .heading__title {
+    padding-top: 112px;
+  }
+
+  .heading__intro--photo {
+    padding: 0 0 71px;
   }
 }
