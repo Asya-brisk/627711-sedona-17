@@ -1,0 +1,36 @@
+.map {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  background-color: @light-blue;
+}
+
+.map__marker {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 27px;
+  height: 27px;
+  background-image: url("../img/icon-map-marker.svg");
+  background-size: 27px 27px;
+  background-repeat: no-repeat;
+}
+
+.map__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.map__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+}

@@ -1,0 +1,33 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+  padding: 16px 13px;
+  border: none;
+  font: inherit;
+  font-size: 21px;
+  font-weight: 700;
+  color: @white;
+  line-height: 26px;
+  text-align: center;
+  text-transform: inherit;
+  text-decoration: none;
+  background-color: @light-blue;
+  cursor: pointer;
+
+  &:hover {
+    background-color: @blue-hover;
+  }
+
+  &:active {
+    color: fade(@white, 30%);
+    background-color: @blue-btn-item-down;
+  }
+
+  &:focus {
+    outline-color: @outline-cl;
+  }
+
+  &:disabled {
+    background-color: @bg-color-btn-disabled;
+  }
+}
