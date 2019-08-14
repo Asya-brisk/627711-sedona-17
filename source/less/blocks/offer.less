@@ -1,0 +1,100 @@
+.offer {
+  margin: 0 auto;
+  padding: 28px 6.25% 49px;
+  text-align: center;
+
+  &--presentation {
+    padding: 0 0 105px;
+  }
+}
+
+.offer__header {
+  padding-top: 33px;
+  padding-bottom: 34px;
+}
+
+.offer__title {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+  color: @black;
+
+  &--presentation {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+.offer__text {
+  margin-top: 19px;
+  line-height: 24px;
+
+  &--presentation {
+    margin: 27px auto 0;
+  }
+}
+
+.offer__button {
+  margin-top: 35px;
+}
+
+@media (min-width: @tablet-width) {
+  .offer {
+    &--search-hotel {
+      padding: 56px 0 58px;
+      max-width: 458px;
+    }
+
+    &--presentation {
+      padding-bottom: 41px;
+      width: 768px;
+    }
+  }
+
+  .offer__header {
+    padding: 66px 0 73px;
+  }
+
+  .offer__title {
+    font-size: 30px;
+
+    &--presentation {
+      margin: 0 auto;
+      max-width: 450px;
+    }
+  }
+
+  .offer__text {
+    margin-top: 26px;
+
+    &--presentation {
+      margin-top: 31px;
+      max-width: 444px;
+    }
+  }
+
+  .offer__button {
+    margin-top: 43px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .offer {
+    &--search-hotel {
+      padding-bottom: 66px;
+    }
+
+    &--presentation {
+      padding-bottom: 85px;
+      width: auto;
+    }
+  }
+
+  .offer__header {
+    padding: 70px 0 71px;
+  }
+
+  .offer__button {
+    margin-top: 47px;
+  }
+}
