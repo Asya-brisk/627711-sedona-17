@@ -34,14 +34,14 @@
 .photo__likes {
   display: flex;
 
-  margin: 0 20px 17px;
+  margin: 0 20px 18px;
 }
 
 .photo__likes-thumber {
   display: inline-block;
   padding: 0;
-  width: 23px;
-  height: 21px;
+  width: 24px;
+  height: 23px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -54,8 +54,8 @@
   font-weight: bold;
 
   padding: 0;
-  padding-top: 3px;
-  margin-left: 14px;
+  padding-top: 2px;
+  margin-left: 12px;
 }
 
 @media (min-width: @tablet-width) {
@@ -91,15 +91,20 @@
   }
 
   .photo__likes {
-    margin: 0 33px 0 auto;
+    margin: 0 31px 0 auto;
+    padding-bottom: 10px;
 
     &--big {
       margin-right: 20px;
     }
+
+    &--road {
+      margin-right: 36px;
+    }
   }
 
   .photo__likes-number {
-    margin-left: 11px;
+    margin-left: 9px;
   }
 }
 
@@ -119,8 +124,15 @@
     bottom: 0;
     width: 100%;
 
+    padding-top: 16px;
+    padding-bottom: 8px;
+
     color: @white;
     background-color: fade(@black, 30%);
+  }
+
+  .photo__description {
+    padding-left: 22px;
   }
 
   .photo__likes-thumber {
