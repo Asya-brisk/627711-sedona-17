@@ -15,6 +15,8 @@ var svgstore = require("gulp-svgstore");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
+var htmlmin = require("gulp-htmlmin");
+var uglify = require("gulp-uglify");
 
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
@@ -29,25 +31,6 @@ gulp.task("css", function () {
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
-});
-
-gulp.task("server", function () {
-  server.init({
-    server: "build/",
-    notify: false,
-    open: true,
-    cors: true,
-    ui: false
-  });
-
-  gulp.watch("source/less/**/*.less", gulp.series("css"));
-  gulp.watch("source/img/icons/*.svg", gulp.series("sprite", "html", "refresh"));
-  gulp.watch("source/*.html", gulp.series("html", "refresh"));
-});
-
-gulp.task("refresh", function (done) {
-  server.reload();
-  done();
 });
 
 gulp.task("images", function() {
@@ -83,7 +66,43 @@ gulp.task("html", function() {
     .pipe(gulp.dest("build"));
 });
 
-gulp.task("build", gulp.series("css", "sprite", "html"));
+gulp.task("minify-html", function() {
+  return gulp.src("source/*.html")
+  .pipe(htmlmin({
+    collapseWhitespace: true,
+    removeComments: true
+  }))
+  .pipe(gulp.dest("build"));
+});
+
+gulp.task("js-min", function() {
+  return gulp.src("source/js/*.js")
+  .pipe(uglify())
+  .pipe(rename("app.min.js"))
+  .pipe(gulp.dest("build/js"))
+});
+
+gulp.task("server", function () {
+  server.init({
+    server: "build/",
+    notify: false,
+    open: true,
+    cors: true,
+    ui: false
+  });
+
+  gulp.watch("source/less/**/*.less", gulp.series("css"));
+  gulp.watch("source/img/icons/*.svg", gulp.series("sprite", "html", "refresh"));
+  gulp.watch("source/js/*.js", gulp.series("js-min", "refresh"));
+  gulp.watch("source/*.html", gulp.series("html", "minify-html", "refresh"));
+});
+
+gulp.task("refresh", function (done) {
+  server.reload();
+  done();
+});
+
+gulp.task("build", gulp.series("css", "sprite", "html", "js-min", "minify-html"));
 gulp.task("start", gulp.series("build", "server"));
 
 gulp.task("copy", function () {
@@ -106,5 +125,7 @@ gulp.task("build", gulp.series(
     "copy",
     "css",
     "sprite",
-    "html"
+    "html",
+    "js-min",
+    "minify-html"
   ));
