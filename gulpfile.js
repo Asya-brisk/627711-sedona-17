@@ -78,7 +78,7 @@ gulp.task("minify-html", function() {
 gulp.task("js-min", function() {
   return gulp.src("source/js/*.js")
   .pipe(uglify())
-  .pipe(rename("app.min.js"))
+  .pipe(rename({suffix: ".min"}))
   .pipe(gulp.dest("build/js"))
 });
 

@@ -1,0 +1,140 @@
+.modal-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  background-color: @white;
+  text-align: center;
+  box-shadow: 0 7px 15px 0 fade(#000101, 15%);
+
+  &--success {
+    display: none;
+  }
+
+  &--failure {
+    display: none;
+  }
+}
+
+.modal-form__top {
+  padding: 25px 20px 26px;
+
+  &--failure {
+    padding-top: 22px;
+    padding-bottom: 0;
+  }
+}
+
+.modal-form__title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: @black;
+  margin-bottom: 27px;
+}
+
+.modal-form__text {
+  line-height: 24px;
+  margin-bottom: 7px;
+
+  &--success,
+  &--failure {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.modal-form__bottom {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &--success {
+    background-color: @bg-body-color;
+  }
+
+  &--failure {
+    padding-top: 16px;
+    padding-bottom: 35px;
+    background-color: @white;
+  }
+}
+
+.modal-form__button {
+  margin: 0 auto;
+  font-size: 18px;
+
+  &--success {
+    width: 280px;
+  }
+
+  &--failure {
+    width: 180px;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .modal-form {
+    &--success {
+      width: 640px;
+    }
+
+    &--failure {
+      width: 400px;
+    }
+  }
+
+  .modal-form__top {
+    padding: 31px 80px;
+
+    &--failure {
+      padding: 30px 60px 15px;
+    }
+  }
+
+  .modal-form__title {
+    font-size: 30px;
+    line-height: 26px;
+    margin-top: 30px;
+    margin-bottom: 29px;
+
+    &--failure {
+      line-height: 40px;
+      margin-top: 25px;
+      margin-bottom: 23px;
+    }
+  }
+
+  .modal-form__text {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    &--failure {
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .modal-form__bottom {
+    padding-top: 44px;
+    padding-bottom: 44px;
+
+    &--failure {
+      padding-top: 18px;
+      padding-bottom: 49px;
+    }
+  }
+
+  .modal-form__button {
+    font-size: 21px;
+
+    &--success {
+      width: 460px;
+    }
+
+    &--failure {
+      width: 270px;
+    }
+  }
+}
