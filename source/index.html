@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Главная страница - Седона</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="preload" href="fonts/ptsans.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/ptsans.woff" as="font" crossorigin="anonymous">
@@ -12,15 +13,17 @@
     <script>
       document.createElement( "picture" );
     </script>
-    <script src="picturefill.min.js" async></script>
+    <script src="js/picturefill.min.js" async></script>
+    <script src="js/svg4everybody.min.js"></script>
+    <script>svg4everybody(); </script>
   </head>
   <body class="page">
     <div style="display:none">
-      <include src="build/img/icons/sprite.svg"></include>
+      <include src="build/img/sprite.svg"></include>
     </div>
     <div class="page-wrapper">
       <header class="page-header">
-        <nav class="main-nav main-nav--opened">
+        <nav class="main-nav main-nav--closed">
           <a class="main-nav__logo logo">
             <picture>
               <source media="(min-width: 1200px)" srcset="img/logo-sedona-desktop.svg">
@@ -49,15 +52,14 @@
       </header>
       <main class="page-main">
         <div class="page-main-header">
-          <h1 class="visually-hidden">Седона - лучший город для туристов в Аризоне</h1>
           <img class="page-main-header__greeting" src="img/text-sedona-index.svg" width="282" height="214" alt="Добро пожаловать в великолепную Седону!">
         </div>
+        <div class="heading">
+          <h1 class="heading__slogan">Cедона &ndash; небольшой городок в Аризоне, заслуживающий большего!</h1>
+          <p class="heading__intro">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+        </div>
         <section class="advantages">
-          <header class="advantages__header heading">
-            <h2 class="visually-hidden">Наши преимущества</h2>
-            <b class="heading__slogan">Cедона &ndash; небольшой городок в Аризоне, заслуживающий большего!</b>
-            <p class="heading__intro">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
-          </header>
+          <h2 class="visually-hidden">Наши преимущества</h2>
           <ul class="advantages__list">
               <li class="advantages__item advantages__item--illustrated">
                 <div class="advantages__item-text-wrapper">
@@ -84,7 +86,7 @@
                   </li>
                   <li class="more-advantages__item more-advantages__item--gift">
                     <h3 class="more-advantages__title">Сувениры</h3>
-                    <p class="more-advantages__description more-advantages__description--gift">Не только китайского, но&nbsp;и&nbsp;местного производства!</p>
+                    <p class="more-advantages__description more-advantages__description--gift"><span class="more-advantages__line-gift">Не только китайского, </span><span class="more-advantages__line-gift">но&nbsp;и местного производства!</span></p>
                   </li>
                   <li class="more-advantages__item more-advantages__item--burger">
                     <h3 class="more-advantages__title">Еда</h3>
@@ -135,7 +137,7 @@
         <section class="map">
           <h2 class="visually-hidden">Карта местности</h2>
           <div class="map__marker"></div>
-          <iframe class="map__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1675852.2863974264!2d-113.18399030541421!3d34.88892989196227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1565623636554!5m2!1sru!2sru" width="320" height="350" frameBorder="0" style="border:0" allowfullscreen=""></iframe>
+          <iframe class="map__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1675852.2863974264!2d-113.18399030541421!3d34.88892989196227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1565623636554!5m2!1sru!2sru" width="320" height="350"  style="border:0" allowfullscreen=""></iframe>
           <picture>
             <source type="image/webp" media="(min-width: 1200px)" srcset="img/bg-map-desktop@1x.webp 1x, img/bg-map-desktop@2x.webp 2x">
             <source type="image/webp" media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.webp 1x, img/bg-map-tablet@2x.webp 2x">
@@ -155,7 +157,7 @@
                 <a class="social__link social__link--twitter" href="https://twitter.com/htmlacademy_ru">
                   <span class="visually-hidden">Мы в Твиттере</span>
                   <svg class="social__icon" width="18" height="15">
-                    <use xlink:href="img/icons/sprite.svg#icon-twitter"></use>
+                    <use xlink:href="img/sprite.svg#icon-twitter"></use>
                   </svg>
                 </a>
               </li>
@@ -163,7 +165,7 @@
                 <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
                   <span class="visually-hidden">Мы в Фейсбуке</span>
                   <svg class="social__icon" width="9" height="19">
-                    <use xlink:href="img/icons/sprite.svg#icon-facebook"></use>
+                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
                   </svg>
                 </a>
               </li>
@@ -171,7 +173,7 @@
                 <a class="social__link social__link--youtube" href="https://www.youtube.com/user/htmlacademyru">
                   <span class="visually-hidden">Мы на Ютубе</span>
                   <svg class="social__icon" width="20" height="14">
-                    <use xlink:href="img/icons/sprite.svg#icon-youtube"></use>
+                    <use xlink:href="img/sprite.svg#icon-youtube"></use>
                   </svg>
                 </a>
               </li>
@@ -182,7 +184,7 @@
             <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
               <span class="visually-hidden">HTML Academy</span>
               <svg class="copyright__icon" width="27" height="34">
-                <use xlink:href="img/icons/sprite.svg#logo-htmlacademy"></use>
+                <use xlink:href="img/sprite.svg#logo-htmlacademy"></use>
               </svg>
             </a>
           </div>

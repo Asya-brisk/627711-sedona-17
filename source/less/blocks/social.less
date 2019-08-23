@@ -19,7 +19,6 @@
   margin-bottom: 3px;
 
   background-color: @light-blue;
-  fill: @white;
 
   &:hover {
     background-color: @blue-hover;
@@ -27,12 +26,19 @@
 
   &:active {
     background-color: @blue-btn-item-down;
-    fill: fade(@white, 30%);
   }
 
   &:focus {
     outline-color: @outline-cl;
   }
+}
+
+.social__icon {
+  fill: @white;
+}
+
+.social__icon:active {
+  fill-opacity: 0.3;
 }
 
 .social__link--youtube {
@@ -41,6 +47,6 @@
 
 @media (min-width: @tablet-width) {
   .social__list {
-    margin: 3px 7px 0 0;
+    margin: 4px 7px 0 0;
   }
 }
