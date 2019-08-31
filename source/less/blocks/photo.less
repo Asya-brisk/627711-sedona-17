@@ -1,14 +1,16 @@
 .photo__link {
+  display: block;
   font-size: 0;
   line-height: 0;
-  margin: 0 auto;
 }
 
 .photo__image {
-  width: 100%;
+  display: block;
+  max-width: 100%;
   height: auto;
   padding-top: 22px;
   padding-bottom: 15px;
+  margin: 0 auto;
 }
 
 .photo__description {
@@ -75,12 +77,10 @@
     }
   }
 
-  .photo__link {
-    margin: 0;
-  }
-
   .photo__image {
+    width: 100%;
     padding: 0;
+    margin: 0;
   }
 
   .photo__info-wrapper {
